@@ -5,6 +5,7 @@ edition = "2021"
 description = "Provides a generic `ClampedValue` struct that stores a value and ensures that it is always within the specified minimum and maximum values."
 license = "MIT OR Apache-2.0"
 readme = "README.md"
+repository = "https://github.com/bread42/clamped_value"
 
 [dependencies]
 num-traits = "0.2.17"
