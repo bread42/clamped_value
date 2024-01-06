@@ -6,6 +6,7 @@ description = "Provides a generic `ClampedValue` struct that stores a value and 
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/bread42/clamped_value"
+keywords = ["clamp", "restricted", "bound", "struct", "generic"]
 
 [dependencies]
 num-traits = "0.2.17"
