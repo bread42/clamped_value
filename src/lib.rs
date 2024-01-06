@@ -99,6 +99,16 @@ where
     /// Returns an f32 ranging from 0.0 to 1.0, representing the current value
     /// in relation to the minimum and maximum, where 0.0 is the minimum and
     /// 1.0 is the maximum
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use clamped_values::ClampedValue;
+    /// 
+    /// let clamped_value = ClampedValue::<u8>::new(50, 75, 100);
+    /// 
+    /// assert_eq!(clamped_value.percent_f32(), 0.5);
+    /// ```
     pub fn percent_f32(&self) -> f32 {
         self.percent::<f32>()
     }
@@ -108,9 +118,19 @@ impl<T> ClampedValue<T>
 where
     T: Into<f64> + Sub<Output = T> + PartialOrd + Clone,
 {
-    /// Returns an f32 ranging from 0.0 to 1.0, representing the current value
+    /// Returns an f64 ranging from 0.0 to 1.0, representing the current value
     /// in relation to the minimum and maximum, where 0.0 is the minimum and
     /// 1.0 is the maximum
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use clamped_values::ClampedValue;
+    /// 
+    /// let clamped_value = ClampedValue::<u8>::new(50, 75, 100);
+    /// 
+    /// assert_eq!(clamped_value.percent_f64(), 0.5);
+    /// ``` 
     pub fn percent_f64(&self) -> f64 {
         self.percent::<f64>()
     }
@@ -140,7 +160,7 @@ impl<T: SaturatingAdd + PartialOrd + Clone> AddAssign<T> for ClampedValue<T> {
     /// # Examples
     ///
     /// ```
-    /// use clamped_value::ClampedValue;
+    /// use clamped_values::ClampedValue;
     ///
     /// let mut clamped_value = ClampedValue::new(0, 5, 10);
     ///
@@ -160,7 +180,7 @@ impl<T: SaturatingSub + PartialOrd + Clone> SubAssign<T> for ClampedValue<T> {
     /// # Examples
     /// 
     /// ```
-    /// use clamped_value::ClampedValue;
+    /// use clamped_values::ClampedValue;
     /// 
     /// let mut clamped_value = ClampedValue::new(0, 5, 10);
     /// 
@@ -180,7 +200,7 @@ impl<T: SaturatingMul + PartialOrd + Clone> MulAssign<T> for ClampedValue<T> {
     /// # Examples
     /// 
     /// ```
-    /// use clamped_value::ClampedValue;
+    /// use clamped_values::ClampedValue;
     /// 
     /// let mut clamped_value = ClampedValue::new(0, 2, 10);
     /// 
@@ -200,7 +220,7 @@ impl<T: Div<Output = T> + PartialOrd + Clone> DivAssign<T> for ClampedValue<T> {
     /// # Examples
     /// 
     /// ```
-    /// use clamped_value::ClampedValue;
+    /// use clamped_values::ClampedValue;
     /// 
     /// let mut clamped_value = ClampedValue::new(0, 8, 10);
     /// 

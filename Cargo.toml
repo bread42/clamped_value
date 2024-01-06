@@ -1,5 +1,5 @@
 [package]
-name = "clamped_value"
+name = "clamped_values"
 version = "0.1.0"
 edition = "2021"
 description = "Provides a generic `ClampedValue` struct that stores a value and ensures that it is always within the specified minimum and maximum values."
